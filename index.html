@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CodeCarrots JS - Eventy</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>CodeCarrots JS</h1>
+					<h3>Eventy</h3>
+					<p>
+						<small>Created by Gosia Ksionek</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Obsługa eventów </h2>
+					<p> Chcemy, żeby nasze strony reagowały na użytkownika, żeby wyświetlały mu informacje zaraz po tym, jak on coś kliknie lub wpisze. 
+					</p>
+
+					<p> po to używamy JavaScriptu, żeby nasze strony były INTERAKTYWNE. </p>
+				</section>
+
+				
+
+				<section>
+					<h2>3 kroki</h2>
+					<p>
+						<ul>
+							<li>wybierz element</li>
+							<li>wybierz zdarzenie</li>
+							<li>zakoduj, co ma się stać</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Jakie zdarzenia możemy wybrać </h2>
+					<p>
+						<ul>
+							<li>load</li>
+							<li>resize</li>
+							<li>keydown/keyup/keypress</li>
+							<li>click</li>
+							<li>mouseover</li>
+							<li>focus</li>
+							<li>input</li>
+							<li>change</li>
+							<li>submit</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Jak to robimy? </h2>
+					<p>
+					<pre>
+					<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+					var element = document.getElementById("button_first");
+var doIt = function(){ alert("Kliknięte")};
+element.addEventListener( 'click', doIt, false);
+} );
+					</code></pre>
+						Co tu jest nietypowego?
+					</p>
+				</section>
+
+	
+
+				<section>
+				<h2>A jak jest w jQuery?</h2>
+					<p>
+					Oczywiście łatwiej... 
+					<pre>
+					<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+					$('#button-first').on('click', function(){
+	alert("Ojej!!")
+})
+					</code></pre>
+
+					</p>
+				</section>
+
+				<section>
+					<h2>A teraz do pracy...</h2>
+					<p>
+						<ul>
+							<li>Ściągnij szkielet zadania z githuba</li>
+							<li>Dodaj jQuery</li>
+							<li>Dodaj swój plik .js</li>
+							<li>W pliku jest formularz. Spraw, by pole formularza zmieniało kolor w trakcie wprowadzania tekstu</li>
+							<li>Po wpisaniu coś w formularz powinien pojawiać się znak "checked" koło tego pola</li>
+							<li>Po kliknięciu submit powinien pokazać się alert</li>
+							<li>* Możesz zamiast alertów systemowych użyć <a href = "http://t4t5.github.io/sweetalert/">sweet alert<a>
+						</ul>
+					</p>
+
+
+
+					
+				</section>
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
