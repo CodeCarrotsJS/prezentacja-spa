@@ -117,14 +117,30 @@ element.addEventListener( 'click', doIt, false);
 				</section>
 
 				<section>
+					<h2>Jak wykorzystać sam event w funkcji? </h2>
+					<p>
+					<pre>
+					<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+					var element = document.getElementById("button_first");
+var doIt = function(e, name){ alert("Kliknięte"+name);
+console.log(e)};
+element.addEventListener( 'click', function(e){doIt(e, "Kasia")}, false);
+} );
+					</code></pre>
+					</p>
+				</section>
+
+
+
+				<section>
 					<h2>A teraz do pracy...</h2>
 					<p>
 						<ul>
-							<li>Ściągnij szkielet zadania z githuba</li>
+							<li>Ściągnij szkielet zadania z <a href="https://github.com/CodeCarrotsJS/szkielet-event">githuba</a></li>
 							<li>Dodaj jQuery</li>
 							<li>Dodaj swój plik .js</li>
 							<li>W pliku jest formularz. Spraw, by pole formularza zmieniało kolor w trakcie wprowadzania tekstu</li>
-							<li>Po wpisaniu coś w formularz powinien pojawiać się znak "checked" koło tego pola</li>
+							<li>Po wpisaniu coś w formularz powinien pojawiać się znak "checked" koło tego pola lub ostrzeżenie, jeśli wprowadzony tekst jest za krótki (ma mniej niż 4 znaki)</li>
 							<li>Po kliknięciu submit powinien pokazać się alert</li>
 							<li>* Możesz zamiast alertów systemowych użyć <a href = "http://t4t5.github.io/sweetalert/">sweet alert<a>
 						</ul>
