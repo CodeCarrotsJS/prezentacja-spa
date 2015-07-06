@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>CodeCarrots JS - Eventy</title>
+		<title>CodeCarrots JS - SPA</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -42,114 +42,72 @@
 			<div class="slides">
 				<section>
 					<h1>CodeCarrots JS</h1>
-					<h3>Eventy</h3>
+					<h3>Single Page Applications</h3>
 					<p>
 						<small>Created by Gosia Ksionek</small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Obsługa eventów </h2>
-					<p> Chcemy, żeby nasze strony reagowały na użytkownika, żeby wyświetlały mu informacje zaraz po tym, jak on coś kliknie lub wpisze. 
+					<h2>Single Page Applications </h2>
+					<p> Sposób projektowania współczesnych stron internetowych, oparty na JavaScripcie. 
 					</p>
 
-					<p> po to używamy JavaScriptu, żeby nasze strony były INTERAKTYWNE. </p>
+					<p> Strony takie są szybkie, interaktywne i komunikują się z serwerem 'pod spodem'. </p>
 				</section>
 
 				
 
 				<section>
-					<h2>3 kroki</h2>
+					<h2>Zasada dziania klasycznej strony internetowej</h2>
 					<p>
 						<ul>
-							<li>wybierz element</li>
-							<li>wybierz zdarzenie</li>
-							<li>zakoduj, co ma się stać</li>
+							<li>wysyłamy request HTTP</li>
+							<li>serwer odpowiada przesyłając dane - HTML, CSS, JS </li>
+							<li>po kliknięciu w element aplikacji następuje kolejny request do serwera, który znów odpowiada...</li>
+						</ul>
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Zasada działania SPA </h2>
+					<p>
+						<ul>
+							<li>wysyłamy request HTTP</li>
+							<li>serwer odpowiada przesyłając dane - HTML, CSS, JS </li>
+							<li>po kliknięciu w element aplikacji następuje kolejny request do serwera - serwer odpowiada jedynie danymi w formacie JSON, które są przetwarzane przez załadowane już pliki</li>
+							<li>dane od użytkownika do serwera też są wysyłane w formacie JSON i nie powodują przeładowania strony </li>
 						</ul>
 					</p>
 				</section>
 
 				<section>
-					<h2>Jakie zdarzenia możemy wybrać </h2>
-					<p>
-						<ul>
-							<li>load</li>
-							<li>resize</li>
-							<li>keydown/keyup/keypress</li>
-							<li>click</li>
-							<li>mouseover</li>
-							<li>focus</li>
-							<li>input</li>
-							<li>change</li>
-							<li>submit</li>
-						</ul>
-					</p>
-				</section>
-
-				<section>
-					<h2>Jak to robimy? </h2>
-					<p>
-					<pre>
-					<code class="javascript" data-trim contenteditable style="font-size: 18px;">
-					var element = document.getElementById("button_first");
-var doIt = function(){ alert("Kliknięte")};
-element.addEventListener( 'click', doIt, false);
-
-					</code></pre>
-						Co tu jest nietypowego?
-					</p>
-				</section>
-
-	
-
-				<section>
-				<h2>A jak jest w jQuery?</h2>
-					<p>
-					Oczywiście łatwiej... 
-					<pre>
-					<code class="javascript" data-trim contenteditable style="font-size: 18px;">
-					$('#button-first').on('click', function(){
-	alert("Ojej!!")
-})
-					</code></pre>
-
-					</p>
-				</section>
-
-				<section>
-					<h2>Jak wykorzystać sam event w funkcji? </h2>
-					<p>
-					<pre>
-					<code class="javascript" data-trim contenteditable style="font-size: 18px;">
-					var element = document.getElementById("button_first");
-var doIt = function(e, name){ alert("Kliknięte"+name);
-console.log(e)};
-element.addEventListener( 'click', function(e){doIt(e, "Kasia")}, false);
-					</code></pre>
-					</p>
-				</section>
-
-
-
-				<section>
-					<h2>A teraz do pracy...</h2>
-					<p>
-						<ul>
-							<li>Ściągnij szkielet zadania z <a href="https://github.com/CodeCarrotsJS/szkielet-event">githuba</a></li>
-							<li>Dodaj jQuery</li>
-							<li>Dodaj swój plik .js</li>
-							<li>W pliku jest formularz. Spraw, by pole formularza zmieniało kolor w trakcie wprowadzania tekstu</li>
-							<li>Po wpisaniu coś w formularz powinien pojawiać się znak "checked" koło tego pola lub ostrzeżenie, jeśli wprowadzony tekst jest za krótki (ma mniej niż 4 znaki)</li>
-							<li>Po kliknięciu submit powinien pokazać się alert</li>
-							<li>* Możesz zamiast alertów systemowych użyć <a href = "http://t4t5.github.io/sweetalert/">sweet alert<a>
-						</ul>
-					</p>
-
-
-
+					<img src="https://i-msdn.sec.s-msft.com/dynimg/IC690875.png">
 					
 				</section>
 
+				<section>
+					<h2>SPA - zalety</h2>
+					<p>
+						<ul>
+							<li>lepszy UX</li>
+							<li>przyjaźniejsze dla urządzeń mobilnych </li>
+							<li>separacja zadań serwera i strony klienckiej</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>SPA - wady</h2>
+					<p>
+						<ul>
+							<li>cięższe do dobrego zaprojektowania</li>
+							<li>trudno indeksowalne </li>
+							<li>dziwne adresy</li>
+						</ul>
+					</p>
+				</section>
 				
 			</div>
 
